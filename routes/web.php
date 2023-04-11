@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/users', [UsersController::class, 'index'])->name('users.filter');
+Route::post('/bigquery-users', [UsersController::class, 'UsingBigQuery'])->name('users.bigqueryfilter');
