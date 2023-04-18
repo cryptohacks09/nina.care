@@ -1,4 +1,14 @@
-public function searchUsers(Request $request)
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\User;
+
+
+class UsersController extends Controller
+{
+    public function searchUsers(Request $request)
 {
     $userQuery = User::query();
     
@@ -44,4 +54,5 @@ private function applyFilter($query, $filterName, $filterValue)
     if (!empty($filterValue)) {
         $query->where($filterName, $filterValue);
     }
+}
 }
